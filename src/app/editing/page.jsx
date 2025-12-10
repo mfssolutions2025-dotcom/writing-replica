@@ -11,7 +11,10 @@ import Process from "@/components/Process";
 import Benefits from "@/components/Benefits";
 import { NonShadowButton } from "@/components/ShadowButton";
 import Condedit from "@/components/Condedit";
+import { useModal } from "@/context/ModalContext";
 function page() {
+  const { openModal } = useModal();
+
   return (
     <div className="overflow-x-hidden">
       <div className="bg-[url('/backgrounds/hero-section.png')] bg-cover">
@@ -95,6 +98,7 @@ function page() {
               borderColor="#142f53"
               shadowColor="#1a3b66"
               className={"text-[1rem]"}
+              clickFunction={() => openModal("contact")}
             >
               Request a quote
             </NonShadowButton>

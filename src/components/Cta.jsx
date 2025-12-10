@@ -1,7 +1,10 @@
 import React from "react";
 import { NonShadowButton } from "./ShadowButton";
+import { useModal } from "@/context/ModalContext";
 
 function Cta() {
+  const { openModal } = useModal();
+
   return (
     <div className="bg-[url('/backgrounds/cta.png')] flex py-20 lg:py-20 flex-col items-center justify-center text-center bg-cover bg-no-repeat bg-center ">
       <h2 className="text-white text-[24px] lg:text-[4rem]  font-medium leading-[1.2] mx-0 lg:mx-[6%]">
@@ -29,6 +32,7 @@ function Cta() {
           hoverColor="#173f73"
           borderColor="#fff"
           className={"text-[1rem]"}
+          clickFunction={() => openModal("contact")}
         >
           request a quote
         </NonShadowButton>

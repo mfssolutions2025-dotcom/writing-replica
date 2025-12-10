@@ -11,19 +11,21 @@ import Process from "@/components/Process";
 import RoundedContainer from "@/components/RoundedContainer";
 import ShadowButton, { NonShadowButton } from "@/components/ShadowButton";
 import Testimonial from "@/components/Testimonials/Testimonial";
+import { useModal } from "@/context/ModalContext";
 import { addDashes, capitalizeAll } from "@/lib/helpers";
 import Image from "next/image";
 import { useEffect } from "react";
 
 export default function Home() {
+  const { openModal } = useModal();
   return (
-    <div className="max-w-screen overflow-x-hidden">
+    <div className="max-w-screen overflow-x-hidden ">
       {/* Hero Section & background */}
       <div className="bg-[url('/backgrounds/hero-section.png')] bg-cover">
         {/* Navbar */}
         <Navbar />
         {/* Hero Section */}
-        <section className="flex items-center lg:items-start justify-between lg:lg:px-[62.33px] px-0 lg:py-12 px-0 py-10 w-screen flex-col lg:flex-row text-center lg:text-start">
+        <section className="flex items-center lg:items-start justify-between lg:lg:px-[6%] px-0 lg:py-12 px-0 py-10 w-screen flex-col lg:flex-row text-center lg:text-start 2xl:px-[20%]">
           <HeroSectionWrapper
             leftClassName="gap-y-5"
             left={
@@ -59,6 +61,7 @@ export default function Home() {
                     mainColor="#fff"
                     hoverColor="#173f73"
                     borderColor="#fff"
+                    clickFunction={() => openModal("contact")}
                   >
                     request a quote
                   </NonShadowButton>
@@ -106,7 +109,7 @@ export default function Home() {
       <BrandLine />
 
       {/*  Initiate Section */}
-      <section className="bg-brown-background py-16 px-4 ">
+      <section className="bg-brown-background py-16 px-[6%] 2xl:px-[20%] ">
         <div className=" mx-[2%]">
           <div className="bg-brown-background lg:bg-[url('/backgrounds/masterpiece.png')] bg-cover bg-bottom rounded-2xl lg:p-8  md:p-36 lg:h-[500px]">
             <div className=" lg:ml-[40%]">
@@ -137,7 +140,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <div className="lg:bg-[url('/backgrounds/service.png')] lg:bg-brown-background bg-[#28263b]">
+      <div className="lg:bg-[url('/backgrounds/service.png')] bg-cover lg:bg-brown-background bg-[#28263b]">
         {/* Container */}
         <div className="flex flex-col items-center text-center pt-10 lg:pt-[170px] justify-center lg:justify-center">
           {/* Rounded Container */}
@@ -225,6 +228,7 @@ export default function Home() {
               borderColor="#142f53"
               shadowColor="#1a3b66"
               className={"text-[1rem]"}
+              clickFunction={() => openModal("contact")}
             >
               Request a quote
             </NonShadowButton>
@@ -315,6 +319,7 @@ export default function Home() {
               hoverColor="#173f73"
               borderColor="#fff"
               className={"text-[1rem]"}
+              clickFunction={() => openModal("contact")}
             >
               request a quote
             </NonShadowButton>

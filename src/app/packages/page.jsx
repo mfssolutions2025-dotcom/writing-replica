@@ -10,7 +10,10 @@ import HeroSectionWrapper from "@/components/HeroSectionWrapper";
 import RoundedContainer from "@/components/RoundedContainer";
 import Image from "next/image";
 import { NonShadowButton } from "@/components/ShadowButton";
+import { useModal } from "@/context/ModalContext";
 function ServiceCard({ service }) {
+  const { openModal } = useModal();
+
   return (
     <div className="flex  justify-center items-center lg:justify-between flex-col lg:flex-row my-5 ">
       {/* Image */}
@@ -32,6 +35,8 @@ function ServiceCard({ service }) {
   );
 }
 const PackageItem = ({ packageItem }) => {
+  const { openModal } = useModal();
+
   return (
     <div className="flex flex-col items-center justify-center bg-white px-2 py-6 w-full my-5 lg:my-0 lg:w-1/3 rounded-2xl shadow-2xl group hover:scale-[104%] transition-all delay-200 ease-in-out hover:border-4 hover:border-accent-primary relative">
       {/* Text Section */}
@@ -62,6 +67,7 @@ const PackageItem = ({ packageItem }) => {
           borderColor="#142f53"
           shadowColor="#1a3b66"
           className={"text-[1rem]"}
+          clickFunction={() => openModal("contact")}
         >
           Request a quote
         </NonShadowButton>

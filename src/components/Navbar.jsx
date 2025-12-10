@@ -114,8 +114,7 @@ function Navbar() {
 
               <div className="float-end mt-5">
                 <ShadowButtons
-                  onClick={() => {
-                    setIsMobile(false);
+                  clickFunction={() => {
                     openModal("contact");
                   }}
                   shadowColor={"#000"}

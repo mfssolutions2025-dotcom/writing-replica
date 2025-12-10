@@ -14,7 +14,7 @@ export default function HeroSectionWrapper({
 }) {
   return (
     <section
-      className={`flex items-center justify-between lg:px-[${paddingHorizontal}] lg:py-[${paddingVertical}] px-0 py-0 w-screen flex-col ${
+      className={`flex items-center justify-between lg:px-[${paddingHorizontal}] lg:py-[${paddingVertical}]  px-0 py-0 w-screen flex-col ${
         reverseOnMobile ? "lg:flex-row-reverse" : "lg:flex-row"
       } ${className}`}
     >

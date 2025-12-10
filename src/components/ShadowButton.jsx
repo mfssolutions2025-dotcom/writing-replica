@@ -13,6 +13,7 @@ function ShadowButton({
   paddingHorizontal,
   borderColor = "#000",
   className,
+  clickFunction,
 }) {
   return (
     <button
@@ -35,6 +36,7 @@ function ShadowButton({
         e.target.style.color = mainColor;
         e.target.style.borderColor = "#000";
       }}
+      onClick={clickFunction}
     >
       {capitalizeAll(children)}
       <ChevronRightIcon
@@ -65,6 +67,7 @@ export function NonShadowButton({
   paddingVertical,
   paddingHorizontal,
   borderColor = "#000",
+  clickFunction,
 }) {
   return (
     <button
@@ -89,6 +92,7 @@ export function NonShadowButton({
         e.target.style.color = mainColor;
         e.target.style.backgroundColor = backgroundColor;
       }}
+      onClick={clickFunction}
     >
       {capitalizeAll(children)}
       <ChevronRightIcon

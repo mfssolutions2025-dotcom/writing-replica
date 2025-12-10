@@ -10,7 +10,10 @@ import Footer from "@/components/Footer";
 import Cta from "@/components/Cta";
 import Portfolio from "@/components/Portfolio";
 import Testimonial from "@/components/Testimonials/Testimonial";
+import { useModal } from "@/context/ModalContext";
 function page() {
+  const { openModal } = useModal();
+
   return (
     <div className="overflow-x-hidden">
       {" "}
@@ -115,6 +118,7 @@ function page() {
               borderColor="#142f53"
               shadowColor="#1a3b66"
               className={"text-[1rem]"}
+              clickFunction={() => openModal("contact")}
             >
               Request a quote
             </NonShadowButton>
@@ -210,6 +214,7 @@ function page() {
                     borderColor="#142f53"
                     shadowColor="#1a3b66"
                     className={"text-[1rem]"}
+                    clickFunction={() => openModal("contact")}
                   >
                     Request a quote
                   </NonShadowButton>

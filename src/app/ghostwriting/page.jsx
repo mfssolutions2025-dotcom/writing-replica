@@ -11,8 +11,11 @@ import Testimonial from "@/components/Testimonials/Testimonial";
 import Benefits from "@/components/Benefits";
 import Process from "@/components/Process";
 import Condedit from "@/components/Condedit";
+import { useModal } from "@/context/ModalContext";
 
 function page() {
+  const { openModal } = useModal();
+
   return (
     <div className="overflow-x-hidden">
       <div className="bg-[url('/backgrounds/hero-section.png')] bg-cover">
@@ -96,6 +99,7 @@ function page() {
               borderColor="#142f53"
               shadowColor="#1a3b66"
               className={"text-[1rem]"}
+              clickFunction={() => openModal("contact")}
             >
               Request a quote
             </NonShadowButton>
@@ -125,6 +129,7 @@ function page() {
               borderColor="#fff"
               shadowColor="#1a3b66"
               className={"text-[1rem]"}
+              clickFunction={() => openModal("contact")}
             >
               Request a quote
             </NonShadowButton>
