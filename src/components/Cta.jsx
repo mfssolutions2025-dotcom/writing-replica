@@ -1,10 +1,20 @@
+"use client";
 import React from "react";
 import { NonShadowButton } from "./ShadowButton";
 import { useModal } from "@/context/ModalContext";
 
 function Cta() {
-  const { openModal } = useModal();
+  const handleLiveChat = () => {
+    console.log("live chat");
 
+    if (typeof window !== "undefined" && window.Tawk_API) {
+      window.Tawk_API.maximize();
+    } else {
+      console.log("Chat widget not loaded yet");
+      // Optional: Show a user-friendly message
+      alert("Live chat is loading. Please try again in a moment.");
+    }
+  };
   return (
     <div className="bg-[url('/backgrounds/cta.png')] flex py-20 lg:py-20 flex-col items-center justify-center text-center bg-cover bg-no-repeat bg-center ">
       <h2 className="text-white text-[24px] lg:text-[4rem]  font-medium leading-[1.2] mx-0 lg:mx-[6%]">
@@ -32,7 +42,7 @@ function Cta() {
           hoverColor="#173f73"
           borderColor="#fff"
           className={"text-[1rem]"}
-          clickFunction={() => openModal("contact")}
+          modal="contact"
         >
           request a quote
         </NonShadowButton>
@@ -43,6 +53,7 @@ function Cta() {
           backgroundColor="black"
           mainColor="white"
           borderColor="white"
+          clickFunction={handleLiveChat}
         >
           Live Chat
         </NonShadowButton>

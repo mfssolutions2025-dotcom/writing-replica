@@ -10,8 +10,12 @@ import { useModal } from "@/context/ModalContext";
 import Image from "next/image";
 import React from "react";
 
+export const metadata = {
+  title: "About | Phoenix Ghostwriting Services",
+  description:
+    "Home page for Phoenix Ghostwriting Services - Professional ghostwriting and copywriting services for books, articles, and content creation. Get help with your writing projects from expert ghostwriters.",
+};
 function page() {
-  const { openModal } = useModal();
   return (
     <div className=" overflow-x-hidden">
       <div className="bg-[url('/backgrounds/hero-section.png')] bg-cover">
@@ -95,7 +99,7 @@ function page() {
               borderColor="#142f53"
               shadowColor="#1a3b66"
               className={"text-[1rem]"}
-              clickFunction={() => openModal("contact")}
+              modal="contact"
             >
               Request a quote
             </NonShadowButton>
@@ -227,7 +231,7 @@ function page() {
                   borderColor="#142f53"
                   shadowColor="#1a3b66"
                   className={"text-[1rem]"}
-                  clickFunction={() => openModal("contact")}
+                  modal="contact"
                 >
                   Request a quote
                 </NonShadowButton>

@@ -1,4 +1,5 @@
 "use client";
+import { useModal } from "@/context/ModalContext";
 import { capitalizeAll } from "@/lib/helpers";
 import { ChevronRightIcon } from "lucide-react";
 import React from "react";
@@ -14,7 +15,18 @@ function ShadowButton({
   borderColor = "#000",
   className,
   clickFunction,
+  modal = "contact",
 }) {
+  const { openModal } = useModal();
+
+  const handleClick = () => {
+    if (modal) {
+      openModal(modal.toString());
+    } else if (clickFunction) {
+      clickFunction(); // Actually call the function here
+    }
+  };
+
   return (
     <button
       className={`flex items-center rounded-lg text-[12px] border  hover:border transition-all delay-100 ease-in-out font-cabin gap-x-1 font-bold w-fit ${className}`}
@@ -36,7 +48,7 @@ function ShadowButton({
         e.target.style.color = mainColor;
         e.target.style.borderColor = "#000";
       }}
-      onClick={clickFunction}
+      onClick={handleClick} // Use the handler function
     >
       {capitalizeAll(children)}
       <ChevronRightIcon
@@ -68,7 +80,18 @@ export function NonShadowButton({
   paddingHorizontal,
   borderColor = "#000",
   clickFunction,
+  modal,
 }) {
+  const { openModal } = useModal();
+
+  const handleClick = () => {
+    if (modal) {
+      openModal(modal.toString());
+    } else if (clickFunction) {
+      clickFunction(); // Actually call the function here
+    }
+  };
+
   return (
     <button
       className={`flex items-center rounded-lg  border transition-all duration-200 ease-in-out font-cabin gap-x-1 font-bold w-fit ${className} `}
@@ -84,7 +107,6 @@ export function NonShadowButton({
       }}
       onMouseEnter={(e) => {
         e.target.style.boxShadow = "none";
-
         e.target.style.backgroundColor = hoverColor;
       }}
       onMouseLeave={(e) => {
@@ -92,7 +114,7 @@ export function NonShadowButton({
         e.target.style.color = mainColor;
         e.target.style.backgroundColor = backgroundColor;
       }}
-      onClick={clickFunction}
+      onClick={handleClick} // Use the handler function
     >
       {capitalizeAll(children)}
       <ChevronRightIcon

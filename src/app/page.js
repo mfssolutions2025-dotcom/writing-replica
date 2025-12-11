@@ -1,4 +1,3 @@
-"use client";
 import Benefits from "@/components/Benefits";
 import BookSlider from "@/components/BooksSlider";
 import BrandLine from "@/components/BrandLine";
@@ -9,15 +8,15 @@ import Navbar from "@/components/Navbar";
 import Portfolio from "@/components/Portfolio";
 import Process from "@/components/Process";
 import RoundedContainer from "@/components/RoundedContainer";
-import ShadowButton, { NonShadowButton } from "@/components/ShadowButton";
+import { NonShadowButton } from "@/components/ShadowButton";
 import Testimonial from "@/components/Testimonials/Testimonial";
-import { useModal } from "@/context/ModalContext";
-import { addDashes, capitalizeAll } from "@/lib/helpers";
 import Image from "next/image";
-import { useEffect } from "react";
-
+export const metadata = {
+  title: "Home | Phoenix Ghostwriting Services",
+  description:
+    "Home page for Phoenix Ghostwriting Services - Professional ghostwriting and copywriting services for books, articles, and content creation. Get help with your writing projects from expert ghostwriters.",
+};
 export default function Home() {
-  const { openModal } = useModal();
   return (
     <div className="max-w-screen overflow-x-hidden ">
       {/* Hero Section & background */}
@@ -61,7 +60,7 @@ export default function Home() {
                     mainColor="#fff"
                     hoverColor="#173f73"
                     borderColor="#fff"
-                    clickFunction={() => openModal("contact")}
+                    modal="contact"
                   >
                     request a quote
                   </NonShadowButton>
@@ -228,7 +227,7 @@ export default function Home() {
               borderColor="#142f53"
               shadowColor="#1a3b66"
               className={"text-[1rem]"}
-              clickFunction={() => openModal("contact")}
+              modal="contact"
             >
               Request a quote
             </NonShadowButton>
@@ -319,7 +318,7 @@ export default function Home() {
               hoverColor="#173f73"
               borderColor="#fff"
               className={"text-[1rem]"}
-              clickFunction={() => openModal("contact")}
+              modal="contact"
             >
               request a quote
             </NonShadowButton>

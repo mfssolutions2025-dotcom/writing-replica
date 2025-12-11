@@ -9,6 +9,11 @@ import Process from "@/components/Process";
 import Footer from "@/components/Footer";
 import Testimonial from "@/components/Testimonials/Testimonial";
 import Benefits from "@/components/Benefits";
+export const metadata = {
+  title: "Publishing | Phoenix Ghostwriting Services",
+  description:
+    "Home page for Phoenix Ghostwriting Services - Professional ghostwriting and copywriting services for books, articles, and content creation. Get help with your writing projects from expert ghostwriters.",
+};
 function page() {
   return (
     <div className="overflow-x-hidden">

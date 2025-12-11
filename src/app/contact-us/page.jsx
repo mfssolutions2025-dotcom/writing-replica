@@ -7,6 +7,11 @@ import BrandLine from "@/components/BrandLine";
 import Footer from "@/components/Footer";
 import { NonShadowButton } from "@/components/ShadowButton";
 import { Facebook, InstagramIcon, Linkedin, TwitterIcon } from "lucide-react";
+export const metadata = {
+  title: "Contact Us | Phoenix Ghostwriting Services",
+  description:
+    "Home page for Phoenix Ghostwriting Services - Professional ghostwriting and copywriting services for books, articles, and content creation. Get help with your writing projects from expert ghostwriters.",
+};
 function page() {
   return (
     <div className="overflow-x-hidden">
@@ -93,17 +98,17 @@ function page() {
         </div>
       </section>
       {/* Footer */}
-      <div className=" relative pt-5 ">
+      <div className="bg-brown-background relative pt-5 ">
         {/* Get Started Part */}
-        <div className="flex flex-col lg:flex-row bg-[#10223f] mx-[6%] lg:px-[90px] lg:py-[80px] rounded-2xl relative z-2 ">
+        <div className="flex flex-col lg:flex-row bg-[#102240] mx-[6%] lg:px-[90px] lg:py-[80px] rounded-2xl relative z-2 ">
           {/* Left Side  */}
-          <div className="flex flex-col w-full lg:w-[60%] border-0 lg:border-r-2 lg:border-r-accent-[#d4d4d4] px-[15px] justify-between space-y-[1.1%] h-[650px] pr-10">
-            <h2 className="text-[2.5rem] font-cabin font-bold text-[white] leading-[47px] text-center lg:text-start">
+          <div className="flex flex-col w-full lg:w-[60%] border-0 lg:border-r-2 lg:border-r-accent-[#d4d4d4] px-[15px] justify-between space-y-[1.1%] h-[650px]">
+            <h2 className="text-[2.5rem] font-cabin font-bold text-white leading-[47px] text-center lg:text-start">
               Learn How Our Professionals <br />
               Write and Publish <br />
               Your Book
             </h2>
-            <p className="text-[18px] text-[white] text-center ">
+            <p className="text-[18px] text-white text-center lg:text-start">
               We’d be delighted to address any queries you may have or provide
               additional information. We look forward to collaborating with you!
             </p>
@@ -151,23 +156,23 @@ function page() {
             </div>
           </div>
           {/* Right Side */}
-          <div className="absolute top-0 -left-10 w-full h-[90%] lg:w-[40%] lg:h-[85%] -z-2 bg-transparent opacity-25 lg:opacity-100">
+          <div className="w-full lg:w-1/2 flex flex-col items-center px-5 mt-5 lg:mt-0">
             <Image
               src={"/footer/footer.png"}
               width={275}
               height={280}
               alt="footer"
             />
-            <h3 className="text-[2.5rem]  font-bold text-center text-[white] ">
+            <h3 className="text-[2.5rem]  font-bold text-center text-white ">
               Reach Out <br /> To Us
             </h3>
-            <p className="text-center text-[18px] font-poppins text-white">
+            <p className="text-center text-[18px] text-white font-poppins">
               By expanding our network of ghostwriters and authors, we can
               connect your book with your audience. Reach out to us today to
               begin the book writing and publishing process.{" "}
               <a
                 href="tel:"
-                className="text-white hover:text-accent-secondary underline"
+                className="text-white hover:text-accent-primary underline"
               >
                 Contact us
               </a>{" "}
@@ -180,11 +185,11 @@ function page() {
                   src={"/footer/call-icon.png"}
                   width={50}
                   height={50}
-                  className="invert-100 brightness-0"
                   alt="phone"
+                  className="brightness-0 invert-100"
                 />
               </div>
-              <h1 className="text-[1.8rem] font-semibold my-10 text-white hover:text-accent-primary">
+              <h1 className="text-[1.8rem] font-semibold my-10 hover:text-accent-primary text-white">
                 +1 (415) 702-1019
               </h1>
             </div>
